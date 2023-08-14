@@ -3,16 +3,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 import time
 import unittest
-from Hypeddit.logintest import Logintest
-from Hypeddit.fangate import Fangate
+from pythonProject.Hypeddit.logintest import Logintest
+from pythonProject.Hypeddit.fangate import Fangate
 
 
 class LoginTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.driver = webdriver.Chrome()
-
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
         # self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
         self.driver.implicitly_wait(3)

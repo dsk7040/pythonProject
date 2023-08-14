@@ -5,8 +5,8 @@ import unittest
 from webdriver_manager.firefox import GeckoDriverManager
 import pytest
 
-from Hypeddit.logintest import Logintest
-from Hypeddit.loudlink import Loudlinks
+from pythonProject.Hypeddit.logintest import Logintest
+from pythonProject.Hypeddit.loudlink import Loudlinks
 
 class LoginTest(unittest.TestCase):
 
