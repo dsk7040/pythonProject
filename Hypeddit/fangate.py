@@ -50,6 +50,8 @@ class Fangate():
         time.sleep(3)
         self.driver.find_element(By.XPATH, self.spotify_artist_xpath).click()
         self.driver.find_element(By.XPATH, self.add_apple_button_xpath).click()
+        self.driver.find_element(By.XPATH, self.spotify_artist_xpath).click()
+        self.driver.find_element(By.XPATH, self.add_apple_button_xpath).click()
 
         time.sleep(4)
 
