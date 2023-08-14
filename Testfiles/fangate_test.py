@@ -6,13 +6,16 @@ import unittest
 from Hypeddit.logintest import Logintest
 from Hypeddit.fangate import Fangate
 
+
 class LoginTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        #self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-        self.driver.implicitly_wait(5)
+        self.driver = webdriver.Chrome()
+
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        # self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+        self.driver.implicitly_wait(3)
         self.driver.maximize_window()
 
     def test_login(self):
@@ -23,13 +26,15 @@ class LoginTest(unittest.TestCase):
         self.login.login("harry@baltech.in", "123456")
         time.sleep(2)
 
-    #def Test_fangate(self):
+        # def Test_fangate(self):
         self.fangate = Fangate(self.driver)
-        self.fangate.Fangate("https://open.spotify.com/track/0FBQ4NrrHUbR9kus7rzrOj?si=174f5e1d4de345e9")
+        self.fangate.create_fangate("https://open.spotify.com/track/0FBQ4NrrHUbR9kus7rzrOj?si=174f5e1d4de345e9",
+                                    "C:\\Users\\Baltech\\Downloads\\Salasar Balaji Tone.mp3", "Arjit singh")
 
     @classmethod
     def tearDownClass(self):
-            self.driver.close()
-            self.driver.quit()
+        self.driver.close()
+        self.driver.quit()
+
 
 print("Fangate Success")
