@@ -10,6 +10,7 @@ class Loudlinks():
         self.Next_button_xpath = "//div[@id='2']//a[@class='button button-primary select-gate-button']"
         self.Web_url_xpath = "//input[@id='content_link']"
         self.Create_id = "saveMusicBar"
+        self.dashboard_button_xpath = "//a[contains(text(),'DASHBOARD')]"
 
     def Create_loudlink(self, weburl):
         self.driver.get("https://dev2.hypeddit.com/loudlinks/create")
@@ -21,6 +22,8 @@ class Loudlinks():
         self.driver.find_element(By.XPATH, self.Web_url_xpath).send_keys(weburl)
         self.driver.find_element(By.ID, self.Create_id).click()
         time.sleep(10)
+        self.driver.find_element(By.ID, self.dashboard_button_xpath).click()
+        time.sleep(2)
 
 
 

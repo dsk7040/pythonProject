@@ -24,7 +24,9 @@ class Logintest():
         self.driver.find_element(By.ID, self.password_textbox_id).send_keys(password)
         self.driver.find_element(By.ID, self.login_button_id).click()
         self.driver.find_element(By.XPATH, self.cancel_popup_xpath).click()
-        time.sleep(3)
+        time.sleep(2)
+
+
 
 
 

@@ -1,7 +1,7 @@
 from selenium import webdriver
 import time
 import unittest
-from pythonProject.Hypeddit.logintest import Logintest
+from Hypeddit.logintest import Logintest
 
 class LoginTest(unittest.TestCase):
 

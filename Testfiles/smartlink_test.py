@@ -1,19 +1,17 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import service, Service
 import time
 import unittest
-from webdriver_manager.firefox import GeckoDriverManager
-import pytest
-
 from Hypeddit.logintest import Logintest
-from Hypeddit.loudlink import Loudlinks
-
+from Hypeddit.smartlink import Smartlink
 class LoginTest(unittest.TestCase):
+
 
     @classmethod
     def setUpClass(self):
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        self.driver.implicitly_wait(5)
+        s = Service("C:\\Users\\Baltech\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe")
+        self.driver = webdriver.Chrome(service=s)
+        self.driver.implicitly_wait(10)
         self.driver.maximize_window()
 
     def test_login(self):
@@ -25,12 +23,10 @@ class LoginTest(unittest.TestCase):
         self.login.login("harry@baltech.in", "123456")
         time.sleep(2)
 
-        self.loud = Loudlinks(self.driver)
-        self.loud.Create_loudlink("https://www.resso.com/in/")
-
+        self.smartlink = Smartlink(self.driver)
+        self.smartlink.create_smartlink("https://music.apple.com/in/album/humdard/1111741333?i=1111741446")
+    print("Smart Link Created")
     @classmethod
     def tearDownClass(self):
         self.driver.close()
         self.driver.quit()
-
-print("Task completed")
