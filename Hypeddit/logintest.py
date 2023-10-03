@@ -25,6 +25,10 @@ class Logintest():
         self.driver.find_element(By.ID, self.login_button_id).click()
         self.driver.find_element(By.XPATH, self.cancel_popup_xpath).click()
         time.sleep(2)
+        # self.driver.get("https://dev2.hypeddit.com/ads/create/youtube-growth-video")
+        # time.sleep(3)
+        # self.driver.find_element(By.ID, "//a[@id='AdsGoogleLogin']").click()
+        # time.sleep(5)
 
 
 

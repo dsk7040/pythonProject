@@ -38,7 +38,6 @@ class Fangate():
     def create_fangate(self, trackurl, uploadmp3, Arjitsingh, Apple_Track):
         self.driver.get("https://dev2.hypeddit.com/gate/create")
         self.driver.implicitly_wait(10)
-        time.sleep(3)
         self.driver.find_element(By.XPATH, self.trackurl_click_xpath).send_keys(trackurl)
         time.sleep(3)
         self.driver.find_element(By.ID, self.next_button_id).click()
