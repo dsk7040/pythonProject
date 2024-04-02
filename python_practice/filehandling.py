@@ -22,6 +22,6 @@ class test():
 obj = test()
 obj.writefile("newfile2.txt", "lorem ipsum testing by deepak")
 obj.readfile("newfile2.txt")
-os.rename("demo.py", "filehandling.py") #please check the file path then excute the code
+os.rename("makedir.py", "filehandling.py") #please check the file path then excute the code
 obj.removefile("newfile2.txt") #first comment rename file then remove our file
 

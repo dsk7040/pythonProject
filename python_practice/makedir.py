@@ -10,42 +10,31 @@ class MyList:
         self.driver = webdriver.Firefox(service=s)
 
     def get_data(self):
-        self.mylist = ["https://hypeddit.com/login", "https://auswide.webdesignmelbourne.agency/"]
+        self.mylist = ["https://hypeddit.com/", "https://www.bungamabattery.com.au/"]
         length = len(self.mylist)
         for i in range(length):
             self.driver.get(self.mylist[i])
-
             self.driver.implicitly_wait(10)
-            if os.path.exists("D:\\hypeddit"):
+
+            deep = self.mylist[i].replace(":", " ")
+            deep1 = deep.replace("/", "-")
+            print(deep1)
+
+            if os.path.exists("D:\\hypeddit\\" + deep1):
                 print("The folder already Exist")
             else:
-                os.mkdir("D:\\hypeddit")
+                os.mkdir("D:\\hypeddit\\" + deep1)
                 print("Folder created")
 
             sshot = pyautogui.screenshot()
-            sshot.save("D:\hypeddit\\deep" + str(i) + ".png")
+            sshot.save("D:\\hypeddit\\" + deep1 + "\\image" + str(i) + ".png")
             print("Image saved")
 
         self.driver.close()
         self.driver.quit()
 
-    # def directory(self):
-    #
-    #     if os.path.exists("D:\\Folder"):
-    #         print("The folder already Exist")
-    #     else:
-    #         os.mkdir("D:\\Folder")
-    #         print("Folder created")
-    #
-    #     sshot = pyautogui.screenshot()
-    #     sshot.save("D:\Folder\image.png")
-    #     print("Image saved")
-    #
-    #     self.driver.close()
-    #     self.driver.quit()
 
 
 obj = MyList()
 obj.getlink()
 obj.get_data()
-# obj.directory()
