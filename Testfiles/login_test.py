@@ -2,13 +2,16 @@ from selenium import webdriver
 import time
 import unittest
 from Hypeddit.logintest import Logintest
+from selenium.webdriver.chrome.service import Service as ChromeService, Service
+
 
 class LoginTest(unittest.TestCase):
 
     @classmethod
 
     def setUpClass(self):
-        self.driver = webdriver.Chrome(executable_path="C:\\Users\\Baltech\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe")
+        s = ChromeService("C:\\Users\\Baltech\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe")
+        self.driver = webdriver.Chrome(service=s)
         self.driver.implicitly_wait(5)
         self.driver.maximize_window()
 

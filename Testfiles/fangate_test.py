@@ -25,12 +25,12 @@ class LoginTest(unittest.TestCase):
 
         self.driver.get("https://dev2.hypeddit.com/devlock")
         self.login.devlock("BetterDevTest8675!")
-        self.login.login("harry@baltech.in", "123456")
+        self.login.login("sonideepak@baltech.in", "123456")
         time.sleep(2)
 
     def test_02_fangate(self):
         self.fangate.create_fangate("https://open.spotify.com/track/390f3txdKIeV7cCv0thgOB?si=97559592778c4fb7",
-                                    "C:\\Users\\Baltech\\Downloads\\Salasar Balaji Tone.mp3", "Arjit singh",
+                                    "C:\\Users\\Baltech\\Downloads\\Music\\27sec.mp3", "Arjit singh",
                                     "https://music.apple.com/in/album/humdard/1111741333?i=1111741446")
 
         time.sleep(2)
